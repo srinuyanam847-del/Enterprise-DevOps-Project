@@ -12,6 +12,8 @@ jobs:
   validate:
     runs-on: ubuntu-latest
 
+    env:
+  APP_ENV: ${{ secrets.APP_ENV }}
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
