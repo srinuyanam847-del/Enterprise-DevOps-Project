@@ -21,4 +21,12 @@ jobs:
           echo "Starting application validation..."
           test -f index.html
           echo "index.html exists"
-          echo "CI validation completed successfully"
+
+      - name: Validate HTML content
+        run: |
+          grep -q "<html>" index.html
+          grep -q "<h1>Enterprise DevOps Application</h1>" index.html
+          echo "HTML validation passed"
+
+      - name: CI validation completed
+        run: echo "CI pipeline completed successfully"
